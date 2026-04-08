@@ -1,0 +1,544 @@
+:root {
+  --azul: #0b1635;
+  --rojo: #d62828;
+  --gris: #666;
+  --borde: #d9d9d9;
+  --fondo: #f4f6f8;
+  --blanco: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: #111;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+.btn-secondary {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.sheet {
+  background: var(--blanco);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.header {
+  background: var(--azul);
+  color: var(--blanco);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  padding: 24px 28px;
+  align-items: start;
+}
+
+.brand-small {
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.title-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.folio-input {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  font-family: inherit;
+  width: 160px;
+  padding: 2px 4px;
+  outline: none;
+}
+
+.folio-input:focus {
+  border-bottom-color: #fff;
+}
+
+.header-right {
+  text-align: right;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.content {
+  padding: 26px 28px 30px;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.section-title {
+  color: var(--rojo);
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.small-title {
+  margin-bottom: 10px;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  gap: 14px 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.editable label {
+  color: var(--rojo);
+}
+
+.readonly label {
+  color: #1b2a52;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  background: var(--blanco);
+}
+
+.editable input,
+.editable textarea {
+  border: 1.8px solid #ff6b6b;
+}
+
+.readonly input,
+.readonly textarea {
+  border: 1px solid var(--borde);
+  background: #f3f5f7;
+  color: #444;
+}
+
+.descripcion-extra {
+  margin: 8px 0 0 0;
+  font-size: 15px;
+  color: #111;
+  font-weight: 700;
+}
+
+.notes-text {
+  line-height: 1.6;
+}
+
+.notes-text p {
+  margin: 0 0 16px 0;
+}
+
+textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.equipment-box,
+.conditions-box,
+.totals-box,
+.signature-box {
+  border: 1px solid var(--borde);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.totals-row {
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.totals-row:last-child {
+  margin-bottom: 0;
+}
+
+.totals-row span {
+  font-weight: 700;
+}
+
+.totals-row.total {
+  padding-top: 10px;
+  border-top: 1px solid var(--borde);
+}
+
+.totals-row.total span {
+  font-size: 18px;
+}
+
+.muted {
+  color: var(--gris);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signature-line {
+  margin-top: 30px;
+  border-top: 1px solid #999;
+  width: 280px;
+  padding-top: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.footer-note {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+.signature-box {
+  width: 100%;
+  min-height: 170px;
+}
+
+.totals-box {
+  width: 100%;
+  max-width: 320px;
+  justify-self: end;
+  align-self: start;
+}
+
+.totals-box input[type="number"],
+.totals-box input[type="text"] {
+  width: 100%;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.totals-box input[type="number"] {
+  border: 1.8px solid #ff6b6b;
+}
+
+.totals-box input[readonly] {
+  border: 1px solid var(--borde);
+  background: #f3f5f7;
+  color: #444;
+}
+
+@media (max-width: 800px) {
+  .header,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .totals-row,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-right {
+    text-align: left;
+  }
+
+  .totals-box {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .page {
+    margin: 0;
+    padding: 0;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .sheet {
+    box-shadow: none;
+  }
+}
+
+/* =========================
+   MODO PDF COMPACTO
+========================= */
+
+/* =========================
+   MODO PDF COMPACTO - 1 HOJA
+========================= */
+
+.pdf-mode {
+  background: #fff;
+}
+
+.pdf-mode .page {
+  max-width: 794px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pdf-mode .actions {
+  display: none;
+}
+
+.pdf-mode .sheet {
+  box-shadow: none;
+  width: 100%;
+}
+
+.pdf-mode .header {
+  padding: 10px 16px;
+  gap: 10px;
+}
+
+.pdf-mode .brand-small {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.pdf-mode .title {
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.pdf-mode .folio-input {
+  font-size: 16px;
+  width: 105px;
+  padding: 0 2px;
+}
+
+.pdf-mode .header-right {
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.pdf-mode .content {
+  padding: 10px 16px 10px;
+}
+
+.pdf-mode .section {
+  margin-bottom: 7px;
+}
+
+.pdf-mode .section-title {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.pdf-mode .grid-2,
+.pdf-mode .grid-3,
+.pdf-mode .grid-4 {
+  gap: 6px 8px;
+}
+
+.pdf-mode .field label {
+  font-size: 9px;
+  margin-bottom: 1px;
+}
+
+.pdf-mode .field input,
+.pdf-mode .field textarea {
+  font-size: 9px;
+  padding: 5px 7px;
+  border-radius: 4px;
+}
+
+.pdf-mode textarea {
+  min-height: 38px;
+  resize: none;
+}
+
+.pdf-mode .equipment-box,
+.pdf-mode .conditions-box,
+.pdf-mode .totals-box,
+.pdf-mode .signature-box {
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.pdf-mode .descripcion-extra {
+  margin-top: 3px;
+  font-size: 9px;
+}
+
+.pdf-mode .notes-text,
+.pdf-mode .notes-text p,
+.pdf-mode .muted,
+.pdf-mode p {
+  font-size: 9px;
+  line-height: 1.15;
+}
+
+.pdf-mode .notes-text p {
+  margin: 0 0 4px 0;
+}
+
+.pdf-mode .bottom-grid {
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pdf-mode .signature-box {
+  min-height: 95px;
+}
+
+.pdf-mode .signature-line {
+  margin-top: 8px;
+  width: 140px;
+  padding-top: 3px;
+  font-size: 9px;
+}
+
+.pdf-mode .totals-box {
+  max-width: 220px;
+  justify-self: end;
+}
+
+.pdf-mode .totals-row {
+  grid-template-columns: 1fr 86px;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.pdf-mode .totals-row span {
+  font-size: 9px;
+}
+
+.pdf-mode .totals-row.total {
+  padding-top: 6px;
+}
+
+.pdf-mode .totals-row.total span {
+  font-size: 10px;
+}
+
+.pdf-mode .footer-note {
+  margin-top: 6px;
+  font-size: 8px;
+}
+
+.pdf-mode input,
+.pdf-mode textarea,
+.pdf-mode .section,
+.pdf-mode .totals-box,
+.pdf-mode .signature-box {
+  page-break-inside: avoid;
+}
+
+/* AJUSTE FINAL PARA EVITAR 2DA HOJA VACÍA */
+.pdf-mode .page {
+  padding-bottom: 0;
+}
+
+.pdf-mode .sheet {
+  overflow: hidden;
+}
+
+.pdf-mode .content {
+  padding: 10px 16px 6px;
+}
+
+.pdf-mode .section:last-of-type {
+  margin-bottom: 0;
+}
+
+.pdf-mode .footer-note {
+  margin-top: 4px;
+  font-size: 8px;
+}
+
+.pdf-mode .signature-box {
+  min-height: 82px;
+}
+
+.pdf-mode textarea {
+  min-height: 26px;
+}
+
+.pdf-mode #cotizacion {
+  transform: scale(0.97);
+  transform-origin: top left;
+  width: 103.2%;
+}

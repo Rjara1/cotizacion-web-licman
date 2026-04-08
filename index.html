@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotización Licman</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="page">
+    <div class="actions">
+      <button class="btn-secondary" onclick="generarPDF()">Generar PDF</button>
+    </div>
+
+    <div class="sheet" id="cotizacion">
+      <div class="header">
+        <div>
+          <div class="brand-small">RENTAL LICMAN SPA · RUT 76.340.171-5</div>
+          <div class="brand-small">LICMAN SPA · RUT 77.574.973-3</div>
+            <h1 class="title title-inline">
+            <span>COTIZACIÓN N°</span>
+            <input id="folioVista" class="folio-input" type="text" value="2463/1" />
+        </h1>
+        </div>
+        <div class="header-right">
+          Antillanca Sur N°571 - Pudahuel<br>
+          Fono: (+56) 226416600<br>
+          www.licman.cl
+        </div>
+      </div>
+
+      <div class="content">
+        <section class="section">
+          <div class="section-title">Datos del cliente</div>
+          <div class="grid-2">
+            <div class="field editable">
+              <label for="senores">Señores</label>
+              <input id="senores" type="text" placeholder="Nombre empresa o cliente" />
+            </div>
+            <div class="field editable">
+              <label for="atSr">At. Sr.</label>
+              <input id="atSr" type="text" placeholder="Nombre contacto" />
+            </div>
+            <div class="field editable">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="correo@empresa.cl" />
+            </div>
+            <div class="field editable">
+              <label for="fono">Fono</label>
+              <input id="fono" type="text" placeholder="Teléfono" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Cel</label>
+              <input id="cel" type="text" placeholder="Celular" />
+            </div>
+            <div class="field editable">
+              <label for="fecha">Fecha</label>
+              <input id="fecha" type="date" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+                      <div class="section-title">Características técnicas del equipo</div>
+          <div class="grid-2">
+            <div class="field editable">
+              <label for="cel">Descripción</label>
+              <input id="cel" type="text" placeholder="Servicio de arriendo de un(a)..." />
+            </div>
+            <div class="field editable">
+              <label for="cel">Cantidad</label>
+              <input id="cel" type="text" placeholder=" " />
+            </div>
+            <div>
+            <p class="descripcion-extra">Con las siguientes Características técnicas:</p>
+            </div>
+            <div class="field editable">
+                <p>
+                      
+                </p>
+            </div>
+            <div class="field editable">
+              <label for="senores">Altura Cabina</label>
+              <input id="senores" type="text" placeholder="altura en mm" />
+            </div>
+            <div class="field editable">
+              <label for="atSr">Altura de levante útil</label>
+              <input id="atSr" type="text" placeholder="altura de levante util en mm" />
+            </div>
+            <div class="field editable">
+              <label for="email">Altura de levante libre</label>
+              <input id="email" type="email" placeholder="altura de levante libre en mm" />
+            </div>
+            <div class="field editable">
+              <label for="fono">Altura mástil en reposo</label>
+              <input id="fono" type="text" placeholder="altura mástil en reposo en mm" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Ancho</label>
+              <input id="cel" type="text" placeholder="Ancho" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Capacidad carga</label>
+              <input id="cel" type="text" placeholder="Capacidad de carga en Kg" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Bateria</label>
+              <input id="cel" type="text" placeholder="ej: 80V / 620Ah (año 2018)" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Largo</label>
+              <input id="cel" type="text" placeholder="largo del equipo en mm (sin horquillas)" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Largo útil de las horquillas</label>
+              <input id="cel" type="text" placeholder="largo útil de las horquillas en mm" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Marca</label>
+              <input id="cel" type="text" placeholder="ej: Jungheinrich" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Mástil</label>
+              <input id="cel" type="text" placeholder="ej: Doble/Triple" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Material ruedas</label>
+              <input id="cel" type="text" placeholder="ej: Caucho Macizo" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Modelo</label>
+              <input id="cel" type="text" placeholder="ej: EFG 425" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Tipo de pallet</label>
+              <input id="cel" type="text" placeholder="ej: abierto/cerrado" />
+            </div>
+            <div class="field editable">
+              <label for="cel">Procedencia</label>
+              <input id="cel" type="text" placeholder="ej: Alemania" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section, notes-text">
+          <div class="section-title">NOTAS: </div>
+            <div class="notes-text">
+              <label for="cel">1.- Periodo mínimo de arriendo: </label>
+              <input id="cel" type="text" placeholder="ej: 30 días corridos" />
+            </div>
+            <p>
+               
+            </p>
+            <div class="notes-text">
+              <label for="cel">2.- Valor mensual:  </label>
+              <input id="cel" type="text" placeholder="ej: UF 19 + IVA" />
+            </div>
+            <p>
+               
+            </p>
+            <div class="notes-text">
+              <label for="cel">3.- Valor traslado (envío y retiro dentro de Santiago): </label>
+              <input id="cel" type="text" placeholder="ej: UF 6,5 + IVA" />
+            </div>
+            <p>
+               
+            </p>
+            <div class = "notes-text">
+              <p>
+                  4.- Enviar Orden de Compra a: Rental Licman SPA
+                  <br>       Rut: 77.027.196-7
+                  <br>       Antillanca Sur N°571
+              </p>
+              <p>
+                  5.- El equipo no incluyen: operador, combustible, revisiones diarias
+              </p>
+              <p>
+                  6.- Tanto las mantenciones preventivas y reparaciones propias por el uso son
+                  de cargo de Licman SPA.
+
+                <label for="cel">Los costos por daños debido a una mala operación
+                  o un uso indebido del equipo, son de cargo:</label>
+                <input id="cel" type="text" placeholder="ej: Don Cristian Cavallari" />
+                  <p>
+                </p>
+                </p>
+                
+                  <p>7.- 
+                <input id="cel" type="text" placeholder="ej: Don Cristian Cavallari" />
+                <label>
+                  se compromete a utilizar operarios con su licencia para conducir grúas horquillas
+                  a combustion al día.
+                </label>
+                <p>
+                  8.- Valores pagaderos en moneda nacional según Unidad de Fomento (UF) al momento
+                  de la facturación.
+                </p>
+                </p>
+                <p>
+                  9.- Se entenderá y presumirá con la aceptación de la presente Cotizacion y recepción
+                  de la Orden de Compra (OC), la celebración del Contrato de Arriendo cuyas
+                  cláusulas mínimas son las precedentes.
+                </p>
+            </div>
+                
+
+        </section>
+
+<section class="section">
+  <div class="section-title">Valores</div>
+
+  <p>Validez de la cotización : 15 días</p>
+
+  <div class="field editable">
+    <label for="plazoEntrega">Plazo de entrega</label>
+    <input id="plazoEntrega" type="text" placeholder="ej: inmediata (previa recepción de la OC)" />
+  </div>
+
+  <div class="field editable">
+    <label for="formaPago">Forma de pago</label>
+    <input id="formaPago" type="text" placeholder="ej: 30 días" />
+  </div>
+
+  <div class="bottom-grid">
+    <div class="signature-box">
+      <div class="section-title small-title">Firma vendedor</div>
+
+      <div class="field editable">
+        <label for="firmaNombre">Nombre vendedor</label>
+        <input id="firmaNombre" type="text" placeholder="Nombre del vendedor" />
+      </div>
+
+      <div class="field editable">
+        <label for="firma">Pie de firma del vendedor</label>
+        <textarea id="firma" placeholder="Cargo, correo o datos que quieras mostrar"></textarea>
+      </div>
+
+      <div class="signature-line">Firma / Timbre</div>
+    </div>
+
+    <div class="totals-box">
+      <div class="totals-row">
+        <span>Neto (UF)</span>
+        <input id="valorNeto" type="number" min="0" step="0.01" placeholder="0.00" />
+      </div>
+
+      <div class="totals-row">
+        <span>IVA 19% (UF)</span>
+        <input id="iva" type="text" value="0.00" readonly />
+      </div>
+
+      <div class="totals-row total">
+        <span>Total a pagar (UF)</span>
+        <input id="total" type="text" value="0.00" readonly />
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
