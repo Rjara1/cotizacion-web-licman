@@ -105,8 +105,8 @@ button {
 }
 
 .title {
-  font-size: 26px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -122,11 +122,11 @@ button {
   border: 0;
   border-bottom: 2px solid rgba(255, 255, 255, 0.55);
   color: #fff;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 800;
   font-family: inherit;
   width: 160px;
-  padding: 2px 4px;
+  padding: 2px 0px;
   outline: none;
 }
 
@@ -136,7 +136,7 @@ button {
 
 .header-right {
   text-align: right;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 1.45;
 }
 
@@ -149,7 +149,7 @@ button {
 }
 
 .section-title {
-  color: var(--rojo);
+  color: var(--negro);
   font-weight: 800;
   font-size: 16px;
   margin-bottom: 14px;
@@ -181,7 +181,7 @@ button {
 
 .field label {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 6px;
   font-weight: 700;
 }
@@ -199,7 +199,7 @@ button {
   width: 100%;
   border-radius: 8px;
   padding: 11px 12px;
-  font-size: 14px;
+  font-size: 12px;
   outline: none;
   font-family: inherit;
   background: var(--blanco);
@@ -207,7 +207,7 @@ button {
 
 .editable input,
 .editable textarea {
-  border: 1.8px solid #ff6b6b;
+  border: 1.8px solid #000000;
 }
 
 .readonly input,
@@ -219,7 +219,7 @@ button {
 
 .descripcion-extra {
   margin: 8px 0 0 0;
-  font-size: 15px;
+  font-size: 13px;
   color: #111;
   font-weight: 700;
 }
@@ -229,7 +229,7 @@ button {
 }
 
 .notes-text p {
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
 }
 
 textarea {
@@ -282,12 +282,12 @@ textarea {
   border-top: 1px solid #999;
   width: 280px;
   padding-top: 8px;
-  font-size: 13px;
+  font-size: 10px;
   color: #444;
 }
 
 .footer-note {
-  margin-top: 18px;
+  margin-top: 10px;
   font-size: 12px;
   color: #666;
   text-align: center;
