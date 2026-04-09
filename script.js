@@ -33,6 +33,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function generarPDF() {
+  const mensajeAnterior = document.getElementById("mensaje-validacion");
+  if (mensajeAnterior) {
+    mensajeAnterior.remove();
+  }
+
+  const esValido = validarCamposObligatorios();
+
+  if (!esValido) {
+    const contenedor = document.querySelector(".page");
+    const mensaje = document.createElement("div");
+    mensaje.id = "mensaje-validacion";
+    mensaje.className = "alerta-validacion";
+    mensaje.textContent = "Debes completar todos los campos obligatorios antes de generar el PDF.";
+    contenedor.insertBefore(mensaje, contenedor.firstChild);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    return;
+  }
+
   const elemento = document.getElementById("cotizacion");
 
   document.body.classList.add("pdf-mode");
@@ -43,7 +66,8 @@ function generarPDF() {
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: {
       scale: 1.6,
-      useCORS: true
+      useCORS: true,
+      scrollY: 0
     },
     jsPDF: {
       unit: "in",
@@ -67,4 +91,33 @@ function generarPDF() {
         document.body.classList.remove("pdf-mode");
       });
   }, 200);
+}
+
+function validarCamposObligatorios() {
+  const campos = document.querySelectorAll(".required-field");
+  let formularioValido = true;
+
+  campos.forEach((campo) => {
+    campo.classList.remove("required-error");
+
+    const valor = campo.value.trim();
+
+    if (!valor) {
+      campo.classList.add("required-error");
+      formularioValido = false;
+    }
+  });
+
+  const valorNeto = document.getElementById("valorNeto");
+  if (valorNeto) {
+    const neto = parseFloat(valorNeto.value) || 0;
+    valorNeto.classList.remove("required-error");
+
+    if (neto <= 0) {
+      valorNeto.classList.add("required-error");
+      formularioValido = false;
+    }
+  }
+
+  return formularioValido;
 }

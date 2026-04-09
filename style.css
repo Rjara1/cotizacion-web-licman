@@ -286,6 +286,22 @@ textarea {
   color: #444;
 }
 
+.required-error {
+  border: 2px solid #ff0000 !important;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.08);
+}
+
+.alerta-validacion {
+  background: #ffe9e9;
+  color: #b00020;
+  border: 1px solid #ffb3b3;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .footer-note {
   margin-top: 10px;
   font-size: 12px;
