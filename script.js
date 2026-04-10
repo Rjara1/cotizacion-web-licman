@@ -3,14 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const iva = document.getElementById("iva");
   const total = document.getElementById("total");
   const fecha = document.getElementById("fecha");
+  const tipoMoneda = document.getElementById("tipoMoneda");
+
+  const labelNeto = document.getElementById("labelNeto");
+  const labelIva = document.getElementById("labelIva");
+  const labelTotal = document.getElementById("labelTotal");
 
   if (fecha) {
     const hoy = new Date();
     fecha.value = hoy.toISOString().split("T")[0];
   }
 
-  function formatearUF(valor) {
-    return Number(valor || 0).toFixed(2);
+  function formatearValor(valor) {
+    const moneda = tipoMoneda ? tipoMoneda.value : "UF";
+
+    if (moneda === "CLP") {
+      return new Intl.NumberFormat("es-CL", {
+        style: "currency",
+        currency: "CLP",
+        maximumFractionDigits: 0
+      }).format(valor || 0);
+    }
+
+    return `${Number(valor || 0).toFixed(2)} UF`;
+  }
+
+  function actualizarLabels() {
+    if (!labelNeto || !labelIva || !labelTotal || !valorNeto) return;
+
+    const moneda = tipoMoneda ? tipoMoneda.value : "UF";
+
+    if (moneda === "CLP") {
+      labelNeto.textContent = "Neto (CLP)";
+      labelIva.textContent = "IVA 19% (CLP)";
+      labelTotal.textContent = "Total a pagar (CLP)";
+      valorNeto.placeholder = "0";
+    } else {
+      labelNeto.textContent = "Neto (UF)";
+      labelIva.textContent = "IVA 19% (UF)";
+      labelTotal.textContent = "Total a pagar (UF)";
+      valorNeto.placeholder = "0.00";
+    }
   }
 
   function recalcularTotales() {
@@ -20,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const valorIva = neto * 0.19;
     const valorTotal = neto + valorIva;
 
-    iva.value = formatearUF(valorIva);
-    total.value = formatearUF(valorTotal);
+    iva.value = formatearValor(valorIva);
+    total.value = formatearValor(valorTotal);
   }
 
   if (valorNeto) {
@@ -29,6 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     valorNeto.addEventListener("change", recalcularTotales);
   }
 
+  if (tipoMoneda) {
+    tipoMoneda.addEventListener("change", () => {
+      actualizarLabels();
+      recalcularTotales();
+    });
+  }
+
+  actualizarLabels();
   recalcularTotales();
 });
 
@@ -43,9 +84,11 @@ function generarPDF() {
   if (!esValido) {
     const contenedor = document.querySelector(".page");
     const mensaje = document.createElement("div");
+
     mensaje.id = "mensaje-validacion";
     mensaje.className = "alerta-validacion";
     mensaje.textContent = "Debes completar todos los campos obligatorios antes de generar el PDF.";
+
     contenedor.insertBefore(mensaje, contenedor.firstChild);
 
     window.scrollTo({
@@ -57,6 +100,7 @@ function generarPDF() {
   }
 
   const elemento = document.getElementById("cotizacion");
+  if (!elemento) return;
 
   document.body.classList.add("pdf-mode");
 

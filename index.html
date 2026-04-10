@@ -16,45 +16,61 @@
     <div class="sheet" id="cotizacion">
       <div class="header">
         <div>
-          <div class="brand-small">RENTAL LICMAN SPA · RUT 76.340.171-5</div>
-            <h1 class="title title-inline">
+          <div class="brand-small">
+            <select id="razonSocial">
+              <option value="RENTAL LICMAN SPA · RUT 76.340.171-5">
+                RENTAL LICMAN SPA · RUT 76.340.171-5
+              </option>
+              <option value="LICMAN SPA · RUT 77.574.973-3">
+                LICMAN SPA · RUT 77.574.973-3
+              </option>
+            </select>
+          </div>
+
+          <h1 class="title title-inline">
             <span>COTIZACIÓN N°</span>
             <input id="folioVista" class="folio-input" type="text" value="2463/1" />
-        </h1>
+          </h1>
         </div>
+
         <div class="header-right logo-box-column">
-            <img src="./assets/logo_licman.png" alt="Logo Licman" class="logo-licman" />
-              <div class="logo-info">
-                Fono: (+56) 226416600 - 
-                www.licman.cl
-              </div>
+          <img src="./assets/logo_licman.png" alt="Logo Licman" class="logo-licman" />
+          <div class="logo-info">
+            Fono: (+56) 226416600 - www.licman.cl
+          </div>
+        </div>
       </div>
-</div>
 
       <div class="content">
         <section class="section">
           <div class="section-title">Datos del cliente</div>
+
           <div class="grid-2">
             <div class="field editable">
               <label for="senores">Señores</label>
               <input id="senores" class="required-field" type="text" placeholder="Nombre empresa o cliente" />
-            </div class="field editable">
+            </div>
+
             <div class="field editable">
-              <label for="senores">Rut</label>
-              <input id="senores" class="required-field" type="text" placeholder="Nombre empresa o cliente" />
-              </div class="field editable">
+              <label for="rut">Rut</label>
+              <input id="rut" class="required-field" type="text" placeholder="RUT empresa o cliente" />
+            </div>
+
             <div class="field editable">
               <label for="atSr">At. Sr.</label>
-              <input id="atSr" class="required-field" type="text"  placeholder="Nombre contacto" />
+              <input id="atSr" class="required-field" type="text" placeholder="Nombre contacto" />
             </div>
+
             <div class="field editable">
               <label for="email">E-mail</label>
               <input id="email" class="required-field" type="email" placeholder="correo@empresa.cl" />
             </div>
+
             <div class="field editable">
-              <label for="fono">Número de Contacto</label>
+              <label for="fono">Número de contacto</label>
               <input id="fono" class="required-field" type="text" placeholder="Teléfono" />
             </div>
+
             <div class="field editable">
               <label for="fecha">Fecha</label>
               <input id="fecha" class="required-field" type="date" />
@@ -63,210 +79,236 @@
         </section>
 
         <section class="section">
-                      <div class="section-title">Características técnicas del equipo</div>
+          <div class="section-title">Características técnicas del equipo</div>
+
           <div class="grid-2">
             <div class="field editable">
-              <label for="cel">Descripción</label>
-              <input id="cel" class="required-field" type="text" placeholder="Servicio de arriendo de un(a)..." />
+              <label for="descripcion">Descripción</label>
+              <input id="descripcion" class="required-field" type="text" placeholder="Servicio de arriendo de un(a)..." />
             </div>
+
             <div class="field editable">
-              <label for="cel">Cantidad</label>
-              <input id="cel" class="required-field" type="text" placeholder=" " />
+              <label for="cantidad">Cantidad</label>
+              <input id="cantidad" class="required-field" type="text" placeholder="" />
             </div>
+
             <div>
-            <p class="descripcion-extra">Con las siguientes Características técnicas:</p>
+              <p class="descripcion-extra">Con las siguientes características técnicas:</p>
             </div>
+
+            <div></div>
+
             <div class="field editable">
-                <p>
-                      
-                </p>
+              <label for="alturaLevanteUtil">Altura de levante útil</label>
+              <input id="alturaLevanteUtil" class="required-field" type="text" placeholder="Altura de levante útil en mm" />
             </div>
+
             <div class="field editable">
-              <label for="atSr">Altura de levante útil</label>
-              <input id="atSr" class="required-field" type="text" placeholder="altura de levante util en mm" />
+              <label for="alturaLevanteLibre">Altura de levante libre</label>
+              <input id="alturaLevanteLibre" class="required-field" type="text" placeholder="Altura de levante libre en mm" />
             </div>
+
             <div class="field editable">
-              <label for="email">Altura de levante libre</label>
-              <input id="email" class="required-field" type="email" placeholder="altura de levante libre en mm" />
+              <label for="alturaMastilReposo">Altura mástil en reposo</label>
+              <input id="alturaMastilReposo" class="required-field" type="text" placeholder="Altura mástil en reposo en mm" />
             </div>
+
             <div class="field editable">
-              <label for="fono">Altura mástil en reposo</label>
-              <input id="fono" class="required-field" type="text" placeholder="altura mástil en reposo en mm" />
+              <label for="ancho">Ancho</label>
+              <input id="ancho" class="required-field" type="text" placeholder="Ancho" />
             </div>
+
             <div class="field editable">
-              <label for="cel">Ancho</label>
-              <input id="cel" class="required-field" type="text" placeholder="Ancho" />
+              <label for="capacidadCarga">Capacidad carga</label>
+              <input id="capacidadCarga" class="required-field" type="text" placeholder="Capacidad de carga en Kg" />
             </div>
+
             <div class="field editable">
-              <label for="cel">Capacidad carga</label>
-              <input id="cel" class="required-field" type="text" placeholder="Capacidad de carga en Kg" />
+              <label for="bateria">Batería</label>
+              <select id="bateria" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="48-V / 620-A">48-V / 620-A</option>
+                <option value="48-V / 775-A">48-V / 775-A</option>
+                <option value="24-V / 350-A">24-V / 350-A</option>
+                <option value="80-V / 900-A">80-V / 900-A</option>
+              </select>
             </div>
+
             <div class="field editable">
-              <label for="cel">Bateria</label>
-              <input id="cel" class="required-field" type="text" placeholder="ej: 80V / 620Ah (año 2018)" />
+              <label for="largoHorquillas">Largo útil de las horquillas</label>
+              <input id="largoHorquillas" class="required-field" type="text" placeholder="Largo útil de las horquillas en mm" />
             </div>
+
             <div class="field editable">
-              <label for="cel">Largo útil de las horquillas</label>
-              <input id="cel" class="required-field" type="text" placeholder="largo útil de las horquillas en mm" />
+              <label for="marca">Marca</label>
+              <select id="marca" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="Jungheinrich">Jungheinrich</option>
+                <option value="Yale">Yale</option>
+                <option value="Hyster">Hyster</option>
+              </select>
             </div>
+
             <div class="field editable">
-              <label for="cel">Marca</label>
-              <input id="cel" class="required-field" type="text" placeholder="ej: Jungheinrich" />
+              <label for="modelo">Modelo</label>
+              <input id="modelo" class="required-field" type="text" placeholder="ej: EFG 425" />
             </div>
+
             <div class="field editable">
               <label for="mastil">Mástil</label>
-                <select id="mastil" class="select-field required-field">
-                  <option value="">Seleccione una opción</option>
-                  <option value="Doble">Doble</option>
-                 <option value="Triple">Triple</option>
-                </select>
+              <select id="mastil" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="Doble">Doble</option>
+                <option value="Triple">Triple</option>
+              </select>
             </div>
+
             <div class="field editable">
-              <label for="Ruedas">Material de Ruedas</label>
-                <select id="Ruedas" class="select-field required-field">
-                  <option value="">Seleccione una opción</option>
-                  <option value="Caucho Macizo">Caucho Macizo</option>
-                 <option value="Poliuretano">Poliuretano</option>
-                </select>
+              <label for="ruedas">Material de ruedas</label>
+              <select id="ruedas" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="Caucho Macizo">Caucho Macizo</option>
+                <option value="Poliuretano">Poliuretano</option>
+              </select>
             </div>
-            <div class="field editable">
-              <label for="cel">Modelo</label>
-              <input id="cel" class="required-field" type="text" placeholder="ej: EFG 425" />
-            </div>
+
             <div class="field editable">
               <label for="pallet">Tipo de pallet</label>
-                <select id="pallet" class="select-field required-field">
-                  <option value="">Seleccione una opción</option>
-                  <option value="Abierto">Abierto</option>
-                 <option value="Cerrado">Cerrado</option>
-                </select>
+              <select id="pallet" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="Abierto">Abierto</option>
+                <option value="Cerrado">Cerrado</option>
+              </select>
             </div>
+
             <div class="field editable">
               <label for="procedencia">Procedencia</label>
-                <select id="procedencia" class="select-field required-field">
-                  <option value="">Seleccione una opción</option>
-                  <option value="Europea">Europea</option>
-                 <option value="Asiática">Asiática</option>
-                </select>
+              <select id="procedencia" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="Europea">Europea</option>
+                <option value="Asiática">Asiática</option>
+              </select>
             </div>
           </div>
         </section>
 
-        <section class="section, notes-text">
-          <div class="section-title">NOTAS: </div>
-            <div class="notes-text">
-              <label for="cel">1.- Periodo mínimo de arriendo: </label>
-              <input id="cel" class="required-field" type="text" placeholder="ej: 30 días corridos" <p> Días corridos</p>
-              
-            </div>
-            <p>
-               
-            </p>
-            <div class="notes-text">
-              <label for="cel">2.- Valor mensual:  </label>
-              <input id="cel" class="required-field" type="text" placeholder="ej:19"  <p> UF + IVA</p>
-            </div>
-            <p>
-               
-            </p>
-            <div class="notes-text">
-              <label for="cel">3.- Valor traslado (envío y retiro dentro de Santiago): </label>
-              <input id="cel" class="required-field" type="text" placeholder="ej:6,5" <p> UF + IVA</p>
-            </div>
-            <p>
-               
-            </p>
-            <div class = "notes-text">
-              <p>
-                  4.- Enviar Orden de Compra a: Rental Licman SPA
-                  <br>       Rut: 77.027.196-7
-                  <br>       Antillanca Sur N°571
-              </p>
-              <p>
-                  5.- El equipo no incluyen: operador, combustible, revisiones diarias
-              </p>
-              <p>
-                  6.- Tanto las mantenciones preventivas y reparaciones propias por el uso son
-                  de cargo de Licman SPA.
+        <section class="section notes-section">
+          <div class="section-title">NOTAS:</div>
 
-                <label for="cel">Los costos por daños debido a una mala operación
-                  o un uso indebido del equipo, son de cargo:</label>
-                <input id="cel" class="required-field" type="text"  placeholder="ej: Don Cristian Cavallari" />
-                  <p>
-                </p>
-                </p>
-                
-                  <p>7.- Don(a)
-                <input id="cel" class="required-field" type="text" placeholder="ej: Don Cristian Cavallari" />
-                <label>
-                  se compromete a utilizar operarios con su licencia para conducir grúas horquillas
-                  a combustion al día.
-                </label>
-                <p>
-                  8.- Valores pagaderos en moneda nacional según Unidad de Fomento (UF) al momento
-                  de la facturación.
-                </p>
-                </p>
-                <p>
-                  9.- Se entenderá y presumirá con la aceptación de la presente Cotizacion y recepción
-                  de la Orden de Compra (OC), la celebración del Contrato de Arriendo cuyas
-                  cláusulas mínimas son las precedentes.
-                </p>
-            </div>
-                
+          <div class="notes-line">
+            <label for="periodo">1.- Periodo mínimo de arriendo:</label>
+            <input id="periodo" class="required-field input-small" type="text" placeholder="ej: 30" />
+            <span>Días corridos</span>
+          </div>
 
+          <div class="notes-line">
+            <label for="valorMensual">2.- Valor mensual:</label>
+            <input id="valorMensual" class="required-field input-xsmall" type="text" placeholder="ej: 19" />
+            <span>UF + IVA</span>
+          </div>
+
+          <div class="notes-line">
+            <label for="valorTraslado">3.- Valor traslado (envío y retiro dentro de Santiago):</label>
+            <input id="valorTraslado" class="required-field input-xsmall" type="text" placeholder="ej: 6,5" />
+            <span>UF + IVA</span>
+          </div>
+
+          <div class="notes-block empresa-datos">
+            <p>4.- Enviar Orden de Compra a: Rental Licman SPA</p>
+            <p class="sublinea">Rut: 77.027.196-7</p>
+            <p class="sublinea">Antillanca Sur N°571</p>
+
+            <p>5.- El equipo no incluye: operador, combustible, revisiones diarias.</p>
+
+            <p>
+              6.- Tanto las mantenciones preventivas y reparaciones propias por el uso son
+              de cargo de Licman SPA. Los costos por daños debido a una mala operación
+              o un uso indebido del equipo, son de cargo de:
+              <input id="responsableDanos" class="required-field input-medium" type="text" placeholder="ej: Don Cristian Cavallari" />
+            </p>
+
+            <p>
+              7.- Don(a)
+              <input id="responsableOperador" class="required-field input-medium" type="text" placeholder="ej: Don Cristian Cavallari" />
+              se compromete a utilizar operarios con su licencia para conducir grúas horquillas a combustión al día.
+            </p>
+
+            <p>
+              8.- Valores pagaderos en moneda nacional según Unidad de Fomento (UF) al momento de la facturación.
+            </p>
+
+            <p>
+              9.- Se entenderá y presumirá con la aceptación de la presente Cotización y recepción de la Orden de Compra (OC),
+              la celebración del Contrato de Arriendo cuyas cláusulas mínimas son las precedentes.
+            </p>
+          </div>
         </section>
 
-<section class="section">
-  <div class="section-title">Valores</div>
+        <section class="section">
+          <div class="section-title">Valores</div>
 
-  <p>Validez de la cotización : 15 días</p>
+          <p>Validez de la cotización: 15 días</p>
 
-  <div class="field editable">
-    <label for="plazoEntrega">Plazo de entrega</label>
-    <input id="plazoEntrega" class="required-field" type="text" placeholder="ej: inmediata (previa recepción de la OC)" />
-  </div>
+          <div class="values-top-grid">
+            <div class="field editable">
+              <label for="plazoEntrega">Plazo de entrega</label>
+              <input id="plazoEntrega" class="required-field" type="text" placeholder="ej: inmediata (previa recepción de la OC)" />
+            </div>
 
-  <div class="field editable">
-    <label for="formaPago">Forma de pago</label>
-    <input id="formaPago" class="required-field" type="text" placeholder="ej: 30 días" />
-  </div>
+            <div class="field editable">
+              <label for="formaPago">Forma de pago</label>
+              <input id="formaPago" class="required-field" type="text" placeholder="ej: 30 días" />
+            </div>
+          </div>
 
-  <div class="bottom-grid">
-    <div class="signature-box">
-      <div class="section-title small-title">Firma vendedor</div>
+          <div class="bottom-grid">
+            <div class="signature-box compact-signature">
+              <div class="section-title small-title">Firma vendedor</div>
 
-      <div class="field editable">
-        <label for="firmaNombre">Nombre vendedor</label>
-        <input id="firmaNombre" class="required-field" type="text" placeholder="Nombre del vendedor" />
+              <div class="field editable">
+                <label for="firmaNombre">Nombre vendedor</label>
+                <input id="firmaNombre" type="text" placeholder="Nombre del vendedor" />
+              </div>
+
+              <div class="field editable">
+                <label for="firma">Pie de firma del vendedor</label>
+                <textarea id="firma" placeholder="Cargo, correo o datos que quieras mostrar"></textarea>
+              </div>
+
+              <div class="signature-line">Firma / Timbre</div>
+            </div>
+
+            <div class="values-panel">
+              <div class="field editable">
+                <label for="tipoMoneda">Tipo de valor</label>
+                <select id="tipoMoneda" class="select-field required-field">
+                  <option value="UF">UF</option>
+                  <option value="CLP">Pesos chilenos</option>
+                </select>
+              </div>
+
+              <div class="totals-box">
+                <div class="totals-row">
+                  <span id="labelNeto">Neto (UF)</span>
+                  <input id="valorNeto" type="number" min="0" step="0.01" placeholder="0.00" />
+                </div>
+
+                <div class="totals-row">
+                  <span id="labelIva">IVA 19% (UF)</span>
+                  <input id="iva" type="text" value="0.00 UF" readonly />
+                </div>
+
+                <div class="totals-row total">
+                  <span id="labelTotal">Total a pagar (UF)</span>
+                  <input id="total" type="text" value="0.00 UF" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <div class="field editable">
-        <label for="firma">Pie de firma del vendedor</label>
-        <textarea id="firma" class="required-field" placeholder="Cargo, correo o datos que quieras mostrar"></textarea>
-      </div>
-
-      <div class="signature-line">Firma / Timbre</div>
     </div>
-
-    <div class="totals-box">
-      <div class="totals-row">
-        <span>Neto (UF)</span>
-        <input id="valorNeto" class="required-field" type="number" min="0" step="0.01" placeholder="0.00" />
-      </div>
-
-      <div class="totals-row">
-        <span>IVA 19% (UF)</span>
-        <input id="iva" class="required-field" type="text" value="0.00" readonly />
-      </div>
-
-      <div class="totals-row total">
-        <span>Total a pagar (UF)</span>
-        <input id="total" class="required-field" type="text" value="0.00" readonly />
-      </div>
-    </div>
   </div>
-</section>
 
   <script src="script.js"></script>
 </body>

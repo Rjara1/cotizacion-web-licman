@@ -5,6 +5,7 @@
   --borde: #d9d9d9;
   --fondo: #f4f6f8;
   --blanco: #fff;
+  --negro: #111;
 }
 
 * {
@@ -15,7 +16,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--fondo);
-  color: #111;
+  color: var(--negro);
 }
 
 .page {
@@ -30,37 +31,6 @@ body {
   justify-content: flex-end;
   margin-bottom: 16px;
   flex-wrap: wrap;
-}
-
-.logo-box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.logo-box-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.logo-info {
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.4;
-  text-align: right;
-  color: #fff;
-}
-
-.logo-licman {
-  max-width: 120px;
-  max-height: 90px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 12px;
 }
 
 button {
@@ -99,14 +69,12 @@ button {
 }
 
 .brand-small {
-  font-size: 15px;
-  letter-spacing: 0.4px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .title {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -126,7 +94,7 @@ button {
   font-weight: 800;
   font-family: inherit;
   width: 160px;
-  padding: 2px 0px;
+  padding: 2px 0;
   outline: none;
 }
 
@@ -138,6 +106,37 @@ button {
   text-align: right;
   font-size: 10px;
   line-height: 1.45;
+}
+
+.logo-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo-box-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.logo-info {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: right;
+  color: #fff;
+}
+
+.logo-licman {
+  max-width: 120px;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
 }
 
 .content {
@@ -195,7 +194,9 @@ button {
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select,
+.select-field {
   width: 100%;
   border-radius: 8px;
   padding: 11px 12px;
@@ -206,7 +207,9 @@ button {
 }
 
 .editable input,
-.editable textarea {
+.editable textarea,
+.editable select,
+.select-field {
   border: 1.8px solid #000000;
 }
 
@@ -217,11 +220,27 @@ button {
   color: #444;
 }
 
+.field select,
+.select-field {
+  appearance: none;
+}
+
+textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
 .descripcion-extra {
   margin: 8px 0 0 0;
   font-size: 13px;
   color: #111;
   font-weight: 700;
+}
+
+/* ===== NOTAS ===== */
+
+.notes-section {
+  width: 100%;
 }
 
 .notes-text {
@@ -232,9 +251,57 @@ button {
   margin: 0 0 8px 0;
 }
 
-textarea {
-  min-height: 88px;
-  resize: vertical;
+.notes-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+
+.notes-line label,
+.notes-line span {
+  font-size: 14px;
+  color: var(--negro);
+}
+
+.notes-section input,
+.notes-text input,
+.empresa-datos input {
+  border: 1.4px solid #000;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 13px;
+  font-family: inherit;
+  height: 24px;
+  outline: none;
+  background: #fff;
+  vertical-align: middle;
+}
+
+.notes-section input:focus,
+.notes-text input:focus,
+.empresa-datos input:focus {
+  border-color: var(--azul);
+}
+
+.input-small {
+  width: 180px;
+}
+
+.input-xsmall {
+  width: 95px;
+}
+
+.input-medium {
+  width: 170px;
+  margin: 0 4px;
+}
+
+.notes-block p {
+  margin: 0 0 8px 0;
+  line-height: 1.5;
 }
 
 .equipment-box,
@@ -246,31 +313,6 @@ textarea {
   border-radius: 10px;
 }
 
-.totals-row {
-  display: grid;
-  grid-template-columns: 1fr 170px;
-  gap: 14px;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.totals-row:last-child {
-  margin-bottom: 0;
-}
-
-.totals-row span {
-  font-weight: 700;
-}
-
-.totals-row.total {
-  padding-top: 10px;
-  border-top: 1px solid var(--borde);
-}
-
-.totals-row.total span {
-  font-size: 18px;
-}
-
 .muted {
   color: var(--gris);
   font-size: 13px;
@@ -278,7 +320,7 @@ textarea {
 }
 
 .signature-line {
-  margin-top: 30px;
+  margin-top: 12px;
   border-top: 1px solid #999;
   width: 280px;
   padding-top: 8px;
@@ -286,17 +328,13 @@ textarea {
   color: #444;
 }
 
-.field select,
-.select-field {
-  width: 100%;
-  border-radius: 8px;
-  padding: 11px 12px;
-  font-size: 14px;
-  outline: none;
-  font-family: inherit;
-  background: var(--blanco);
-  border: 1.8px solid #000000;
-  appearance: none;
+.empresa-datos p {
+  margin: 0 0 6px 0;
+}
+
+.empresa-datos .sublinea {
+  padding-left: 220px;
+  margin-bottom: 4px;
 }
 
 .required-error {
@@ -322,24 +360,82 @@ textarea {
   text-align: center;
 }
 
+/* ===== Bloque firma + valores ===== */
+
 .bottom-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: 640px 250px;
   gap: 18px;
   align-items: start;
+  justify-content: center;
   margin-top: 14px;
 }
 
-.signature-box {
+.signature-box,
+.compact-signature {
   width: 100%;
-  min-height: 170px;
+  max-width: 640px;
+  min-height: auto;
+  padding: 12px;
+}
+
+.signature-box textarea,
+.compact-signature textarea {
+  min-height: 52px;
+  resize: vertical;
+}
+
+.values-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 250px;
+  align-self: start;
+  justify-self: center;
+}
+
+.values-panel .field {
+  margin-bottom: 0;
+}
+
+.values-panel .field label {
+  margin-bottom: 6px;
 }
 
 .totals-box {
   width: 100%;
-  max-width: 320px;
-  justify-self: end;
-  align-self: start;
+  max-width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+.totals-row {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.totals-row:last-child {
+  margin-bottom: 0;
+}
+
+.totals-row span {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.totals-row.total {
+  padding-top: 8px;
+  border-top: 1px solid var(--borde);
+}
+
+.totals-row.total span {
+  font-size: 15px;
 }
 
 .totals-box input[type="number"],
@@ -361,23 +457,36 @@ textarea {
   color: #444;
 }
 
+/* ===== Responsive ===== */
+
+@media (max-width: 1000px) {
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .signature-box,
+  .compact-signature,
+  .values-panel,
+  .totals-box {
+    max-width: 100%;
+  }
+
+  .totals-row {
+    grid-template-columns: 1fr 140px;
+  }
+}
+
 @media (max-width: 800px) {
   .header,
   .grid-2,
   .grid-3,
-  .grid-4,
-  .totals-row,
-  .bottom-grid {
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 
   .header-right {
     text-align: left;
-  }
-
-  .totals-box {
-    max-width: 100%;
-    justify-self: stretch;
   }
 }
 
@@ -400,13 +509,7 @@ textarea {
   }
 }
 
-/* =========================
-   MODO PDF COMPACTO
-========================= */
-
-/* =========================
-   MODO PDF COMPACTO - 1 HOJA
-========================= */
+/* ===== PDF compacto ===== */
 
 .pdf-mode {
   background: #fff;
@@ -416,6 +519,7 @@ textarea {
   max-width: 794px;
   margin: 0 auto;
   padding: 0;
+  padding-bottom: 0;
 }
 
 .pdf-mode .actions {
@@ -425,6 +529,7 @@ textarea {
 .pdf-mode .sheet {
   box-shadow: none;
   width: 100%;
+  overflow: hidden;
 }
 
 .pdf-mode .header {
@@ -454,11 +559,15 @@ textarea {
 }
 
 .pdf-mode .content {
-  padding: 10px 16px 10px;
+  padding: 10px 16px 6px;
 }
 
 .pdf-mode .section {
   margin-bottom: 7px;
+}
+
+.pdf-mode .section:last-of-type {
+  margin-bottom: 0;
 }
 
 .pdf-mode .section-title {
@@ -478,14 +587,15 @@ textarea {
 }
 
 .pdf-mode .field input,
-.pdf-mode .field textarea {
+.pdf-mode .field textarea,
+.pdf-mode .field select {
   font-size: 9px;
   padding: 5px 7px;
   border-radius: 4px;
 }
 
 .pdf-mode textarea {
-  min-height: 38px;
+  min-height: 26px;
   resize: none;
 }
 
@@ -514,14 +624,59 @@ textarea {
   margin: 0 0 4px 0;
 }
 
+.pdf-mode .notes-line {
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.pdf-mode .notes-line label,
+.pdf-mode .notes-line span,
+.pdf-mode .notes-block p {
+  font-size: 9px;
+  line-height: 1.15;
+}
+
+.pdf-mode .notes-section input,
+.pdf-mode .notes-text input,
+.pdf-mode .empresa-datos input {
+  height: 18px;
+  padding: 1px 4px;
+  font-size: 9px;
+  border-radius: 3px;
+}
+
+.pdf-mode .input-small {
+  width: 120px;
+}
+
+.pdf-mode .input-xsmall {
+  width: 55px;
+}
+
+.pdf-mode .input-medium {
+  width: 120px;
+  margin: 0 2px;
+}
+
+.pdf-mode .empresa-datos .sublinea {
+  padding-left: 160px;
+}
+
 .pdf-mode .bottom-grid {
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 8px;
   margin-top: 8px;
 }
 
-.pdf-mode .signature-box {
-  min-height: 95px;
+.pdf-mode .signature-box,
+.pdf-mode .compact-signature {
+  min-height: 82px;
+  max-width: 100%;
+}
+
+.pdf-mode .signature-box textarea,
+.pdf-mode .compact-signature textarea {
+  min-height: 30px;
 }
 
 .pdf-mode .signature-line {
@@ -531,13 +686,17 @@ textarea {
   font-size: 9px;
 }
 
+.pdf-mode .values-panel,
 .pdf-mode .totals-box {
-  max-width: 220px;
-  justify-self: end;
+  max-width: 200px;
+}
+
+.pdf-mode .totals-box {
+  margin: 0 auto;
 }
 
 .pdf-mode .totals-row {
-  grid-template-columns: 1fr 86px;
+  grid-template-columns: 1fr 78px;
   gap: 6px;
   margin-bottom: 4px;
 }
@@ -555,50 +714,65 @@ textarea {
 }
 
 .pdf-mode .footer-note {
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 8px;
 }
 
 .pdf-mode input,
 .pdf-mode textarea,
+.pdf-mode select,
 .pdf-mode .section,
 .pdf-mode .totals-box,
 .pdf-mode .signature-box {
   page-break-inside: avoid;
 }
 
-/* AJUSTE FINAL PARA EVITAR 2DA HOJA VACÍA */
-.pdf-mode .page {
-  padding-bottom: 0;
-}
-
-.pdf-mode .sheet {
-  overflow: hidden;
-}
-
-.pdf-mode .content {
-  padding: 10px 16px 6px;
-}
-
-.pdf-mode .section:last-of-type {
-  margin-bottom: 0;
-}
-
-.pdf-mode .footer-note {
-  margin-top: 4px;
-  font-size: 8px;
-}
-
-.pdf-mode .signature-box {
-  min-height: 82px;
-}
-
-.pdf-mode textarea {
-  min-height: 26px;
-}
-
 .pdf-mode #cotizacion {
   transform: scale(0.97);
   transform-origin: top left;
   width: 103.2%;
+}
+
+.brand-small input,
+.brand-small select {
+  width: 50%;
+  max-width: 420px;
+  height: 36px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  background: #2b4489;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+}
+
+.brand-small input::placeholder {
+  color: #666;
+}
+
+.brand-small select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.values-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 800px) {
+  .values-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pdf-mode .values-top-grid {
+  gap: 8px;
+  margin-bottom: 8px;
 }
