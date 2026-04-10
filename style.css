@@ -286,6 +286,19 @@ textarea {
   color: #444;
 }
 
+.field select,
+.select-field {
+  width: 100%;
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  background: var(--blanco);
+  border: 1.8px solid #000000;
+  appearance: none;
+}
+
 .required-error {
   border: 2px solid #ff0000 !important;
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.08);
