@@ -17,14 +17,10 @@
       <div class="header">
         <div>
           <div class="brand-small">
-            <select id="razonSocial">
-              <option value="RENTAL LICMAN SPA · RUT 76.340.171-5">
-                RENTAL LICMAN SPA · RUT 76.340.171-5
-              </option>
-              <option value="LICMAN SPA · RUT 77.574.973-3">
-                LICMAN SPA · RUT 77.574.973-3
-              </option>
-            </select>
+          <select id="razonSocial">
+            <option value="RENTAL LICMAN SPA">RENTAL LICMAN SPA · RUT 76.340.171-5</option>
+            <option value="LICMAN SPA">LICMAN SPA · RUT 77.574.973-3</option>
+          </select>
           </div>
 
           <h1 class="title title-inline">
@@ -119,8 +115,28 @@
             </div>
 
             <div class="field editable">
+              <label for="largoHorquillas">Largo útil de las horquillas</label>
+              <input id="largoHorquillas" class="required-field" type="text" placeholder="Largo útil de las horquillas en mm" />
+            </div>
+
+            <div class="field editable">
               <label for="capacidadCarga">Capacidad carga</label>
-              <input id="capacidadCarga" class="required-field" type="text" placeholder="Capacidad de carga en Kg" />
+              <select id="capacidadCarga" class="select-field required-field">
+                <option value="">Seleccione una opción</option>
+                <option value="1000 kg">1000 kg</option>
+                <option value="1200 kg">1200 kg</option>
+                <option value="1400 kg">1400 kg</option>
+                <option value="1500 kg">1500 kg</option>
+                <option value="1600 kg">1600 kg</option>
+                <option value="1800 kg">1800 kg</option>
+                <option value="2000 kg">2000 kg</option>
+                <option value="2500 kg">2500 kg</option>
+                <option value="3000 kg">3000 kg</option>
+                <option value="3500 kg">3500 kg</option>
+                <option value="4000 kg">4000 kg</option>
+                <option value="4500 kg">4500 kg</option>
+                <option value="5000 kg">5000 kg</option>
+              </select>
             </div>
 
             <div class="field editable">
@@ -132,11 +148,6 @@
                 <option value="24-V / 350-A">24-V / 350-A</option>
                 <option value="80-V / 900-A">80-V / 900-A</option>
               </select>
-            </div>
-
-            <div class="field editable">
-              <label for="largoHorquillas">Largo útil de las horquillas</label>
-              <input id="largoHorquillas" class="required-field" type="text" placeholder="Largo útil de las horquillas en mm" />
             </div>
 
             <div class="field editable">
@@ -214,9 +225,9 @@
           </div>
 
           <div class="notes-block empresa-datos">
-            <p>4.- Enviar Orden de Compra a: Rental Licman SPA</p>
-            <p class="sublinea">Rut: 77.027.196-7</p>
-            <p class="sublinea">Antillanca Sur N°571</p>
+            <p>4.- Enviar Orden de Compra a: <span id="empresaOc">Rental Licman SPA</span></p>
+            <p class="sublinea">Rut: <span id="rutOc">77.027.196-7</span></p>
+            <p class="sublinea"><span id="direccionOc">Antillanca Sur N°571</span></p>
 
             <p>5.- El equipo no incluye: operador, combustible, revisiones diarias.</p>
 
@@ -250,14 +261,18 @@
           <p>Validez de la cotización: 15 días</p>
 
           <div class="values-top-grid">
-            <div class="field editable">
+            <div class="field editable plazo-entrega-field">
               <label for="plazoEntrega">Plazo de entrega</label>
               <input id="plazoEntrega" class="required-field" type="text" placeholder="ej: inmediata (previa recepción de la OC)" />
             </div>
 
-            <div class="field editable">
+            <div class="field editable forma-pago-field">
               <label for="formaPago">Forma de pago</label>
-              <input id="formaPago" class="required-field" type="text" placeholder="ej: 30 días" />
+              <select id="formaPago" class="select-field required-field">
+                <option value="">Seleccione</option>
+                <option value="Contado">Contado</option>
+                <option value="Crédito a 30 días">Crédito a 30 días</option>
+              </select>
             </div>
           </div>
 

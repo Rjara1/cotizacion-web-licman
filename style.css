@@ -761,9 +761,19 @@ textarea {
 
 .values-top-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr;
   gap: 16px;
+  align-items: end;
   margin-bottom: 14px;
+}
+
+.values-top-grid .field {
+  margin-bottom: 0;
+}
+
+.values-top-grid .plazo-entrega-field input,
+.values-top-grid .forma-pago-field select {
+  width: 100%;
 }
 
 @media (max-width: 800px) {
@@ -773,6 +783,7 @@ textarea {
 }
 
 .pdf-mode .values-top-grid {
+  grid-template-columns: 2fr 0.9fr;
   gap: 8px;
   margin-bottom: 8px;
 }

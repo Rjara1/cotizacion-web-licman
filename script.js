@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const labelIva = document.getElementById("labelIva");
   const labelTotal = document.getElementById("labelTotal");
 
+  const razonSocial = document.getElementById("razonSocial");
+  const empresaOc = document.getElementById("empresaOc");
+  const rutOc = document.getElementById("rutOc");
+  const direccionOc = document.getElementById("direccionOc");
+
   if (fecha) {
     const hoy = new Date();
     fecha.value = hoy.toISOString().split("T")[0];
@@ -49,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function recalcularTotales() {
     if (!valorNeto || !iva || !total) return;
 
-    const neto = parseFloat(valorNeto.value) || 0;
+    const neto = Number(valorNeto.value) || 0;
     const valorIva = neto * 0.19;
     const valorTotal = neto + valorIva;
 
@@ -57,8 +62,25 @@ document.addEventListener("DOMContentLoaded", () => {
     total.value = formatearValor(valorTotal);
   }
 
+  function actualizarDatosEmpresa() {
+    if (!razonSocial || !empresaOc || !rutOc || !direccionOc) return;
+
+    const empresaSeleccionada = razonSocial.value;
+
+    if (empresaSeleccionada === "LICMAN SPA") {
+      empresaOc.textContent = "Licman SPA";
+      rutOc.textContent = "77.779.910-K";
+      direccionOc.textContent = "Antillanca Sur N°571";
+    } else {
+      empresaOc.textContent = "Rental Licman SPA";
+      rutOc.textContent = "77.027.196-7";
+      direccionOc.textContent = "Antillanca Sur N°571";
+    }
+  }
+
   if (valorNeto) {
     valorNeto.addEventListener("input", recalcularTotales);
+    valorNeto.addEventListener("keyup", recalcularTotales);
     valorNeto.addEventListener("change", recalcularTotales);
   }
 
@@ -69,8 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (razonSocial) {
+    razonSocial.addEventListener("change", actualizarDatosEmpresa);
+  }
+
   actualizarLabels();
   recalcularTotales();
+  actualizarDatosEmpresa();
 });
 
 function generarPDF() {
@@ -154,7 +181,7 @@ function validarCamposObligatorios() {
 
   const valorNeto = document.getElementById("valorNeto");
   if (valorNeto) {
-    const neto = parseFloat(valorNeto.value) || 0;
+    const neto = Number(valorNeto.value) || 0;
     valorNeto.classList.remove("required-error");
 
     if (neto <= 0) {
