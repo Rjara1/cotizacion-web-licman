@@ -159,6 +159,11 @@ button {
   margin-bottom: 10px;
 }
 
+.input-periodo {
+  width: 60px;
+}
+
+
 .grid-2,
 .grid-3,
 .grid-4 {
@@ -291,11 +296,11 @@ textarea {
 }
 
 .input-xsmall {
-  width: 95px;
+  width: 65px;
 }
 
 .input-medium {
-  width: 170px;
+  width: 200px;
   margin: 0 4px;
 }
 

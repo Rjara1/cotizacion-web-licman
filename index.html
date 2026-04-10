@@ -84,7 +84,7 @@
             </div>
 
             <div class="field editable">
-              <label for="cantidad">Cantidad</label>
+              <label for="cantidad">Cantidad (Unidad)</label>
               <input id="cantidad" class="required-field" type="text" placeholder="" />
             </div>
 
@@ -95,32 +95,32 @@
             <div></div>
 
             <div class="field editable">
-              <label for="alturaLevanteUtil">Altura de levante útil</label>
+              <label for="alturaLevanteUtil">Altura de levante útil (mm)</label>
               <input id="alturaLevanteUtil" class="required-field" type="text" placeholder="Altura de levante útil en mm" />
             </div>
 
             <div class="field editable">
-              <label for="alturaLevanteLibre">Altura de levante libre</label>
+              <label for="alturaLevanteLibre">Altura de levante libre (mm)</label>
               <input id="alturaLevanteLibre" class="required-field" type="text" placeholder="Altura de levante libre en mm" />
             </div>
 
             <div class="field editable">
-              <label for="alturaMastilReposo">Altura mástil en reposo</label>
+              <label for="alturaMastilReposo">Altura mástil en reposo (mm)</label>
               <input id="alturaMastilReposo" class="required-field" type="text" placeholder="Altura mástil en reposo en mm" />
             </div>
 
             <div class="field editable">
-              <label for="ancho">Ancho</label>
+              <label for="ancho">Ancho (mm)</label>
               <input id="ancho" class="required-field" type="text" placeholder="Ancho" />
             </div>
 
             <div class="field editable">
-              <label for="largoHorquillas">Largo útil de las horquillas</label>
+              <label for="largoHorquillas">Largo útil de las horquillas (mm)</label>
               <input id="largoHorquillas" class="required-field" type="text" placeholder="Largo útil de las horquillas en mm" />
             </div>
 
             <div class="field editable">
-              <label for="capacidadCarga">Capacidad carga</label>
+              <label for="capacidadCarga">Capacidad carga (kg)</label>
               <select id="capacidadCarga" class="select-field required-field">
                 <option value="">Seleccione una opción</option>
                 <option value="1000 kg">1000 kg</option>
@@ -208,13 +208,13 @@
 
           <div class="notes-line">
             <label for="periodo">1.- Periodo mínimo de arriendo:</label>
-            <input id="periodo" class="required-field input-small" type="text" placeholder="ej: 30" />
+            <input id="periodo" class="required-field input-periodo" type="number" min="1" placeholder="30" />
             <span>Días corridos</span>
           </div>
 
           <div class="notes-line">
             <label for="valorMensual">2.- Valor mensual:</label>
-            <input id="valorMensual" class="required-field input-xsmall" type="text" placeholder="ej: 19" />
+            <input id="valorMensual" class="required-field input-xsmall input-valores" type="text" placeholder="ej: 19" />
             <span>UF + IVA</span>
           </div>
 
@@ -262,8 +262,13 @@
 
           <div class="values-top-grid">
             <div class="field editable plazo-entrega-field">
-              <label for="plazoEntrega">Plazo de entrega</label>
-              <input id="plazoEntrega" class="required-field" type="text" placeholder="ej: inmediata (previa recepción de la OC)" />
+              <label for="plazoEntrega">Plazo de entrega (previa recepción de la OC)</label>
+                <select id="formaPago" class="select-field required-field">
+                  <option value="">Seleccione</option>
+                  <option value="3 días hábiles">3 días hábiles</option>
+                  <option value="5 días hábiles">5 días hábiles</option>
+                  <option value="Inmediata">Inmediata</option>
+                </select>
             </div>
 
             <div class="field editable forma-pago-field">
