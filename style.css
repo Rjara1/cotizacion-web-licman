@@ -54,7 +54,7 @@ button {
 
 .sheet {
   background: var(--blanco);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px #123e63(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
@@ -89,7 +89,7 @@ button {
   font-weight: 700;
   font-family: inherit;
   background: transparent;
-  color: #000000;
+  color: #123e63;
   box-shadow: none;
 }
 
